@@ -8,9 +8,10 @@
     "sideEffects": false,
     "scripts": {
         "optimize:svg": "svgo -f icons/ -r",
-        "build": "npm run build:icons && npm run build:tsc",
+        "build": "npm run build:icons && npm run build:icons:native && npm run build:tsc",
         "build:tsc": "tsup --minify",
         "build:icons": "svgr -- icons",
+        "build:icons:native": "svgr --config-file='.svgrrc.native.js' -- icons",
         "release": "standard-version --release-as patch && git push --follow-tags && npm publish"
     },
     "files": [
@@ -52,6 +53,7 @@
         "typescript": "^5.5.4"
     },
     "peerDependencies": {
-        "react": ">= 16"
+        "react": ">= 16",
+        "react-native-svg": "^15.14.0"
     }
 }
