@@ -9,8 +9,8 @@
   "scripts": {
     "optimize:svg": "svgo -f icons/ -r",
     "build": "npm run build:data-uri && npm run build:icons && npm run build:tsc",
-    "build:tsc": "tsup --minify",
-    "build:icons": "svgr -- icons && node scripts/generate-rtl-icons.js",
+    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify",
+    "build:icons": "svgr -- icons",
     "build:data-uri": "node scripts/generate-data-uris.js",
     "release": "standard-version --release-as patch && git push --follow-tags && npm publish",
     "prepare": "npx husky"
