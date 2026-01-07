@@ -1,0 +1,1 @@
+import*as o from"react";const i=({size:e=24,color:r="currentColor",...t})=>o.createElement("svg",{viewBox:"0 0 24 24",width:e,height:e,stroke:r,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},o.createElement("path",{d:"m17 17 5-5-5-5M7 7l-5 5 5 5m7-14-4 18"}));i.displayName="CodeSnippet02";export{i as CodeSnippet02};

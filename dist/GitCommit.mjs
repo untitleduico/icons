@@ -1,0 +1,1 @@
+import*as r from"react";const i=({size:o=24,color:t="currentColor",...e})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:t,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...e},r.createElement("path",{d:"M16 12a4 4 0 0 1-8 0m8 0a4 4 0 0 0-8 0m8 0h6M8 12H2"}));i.displayName="GitCommit";export{i as GitCommit};

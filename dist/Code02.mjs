@@ -1,0 +1,1 @@
+import*as r from"react";const i=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"m17 17 5-5-5-5M7 7l-5 5 5 5m7-14-4 18"}));i.displayName="Code02";export{i as Code02};

@@ -1,0 +1,1 @@
+import*as r from"react";const n=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"m6 7 12 10-6 5V2l6 5L6 17"}));n.displayName="BluetoothOn";export{n as BluetoothOn};

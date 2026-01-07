@@ -1,0 +1,1 @@
+import*as e from"react";const t=({size:r=24,color:o="currentColor",...i})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...i},e.createElement("path",{d:"M4 14h6m0 0v6m0-6-7 7m17-11h-6m0 0V4m0 6 7-7"}));t.displayName="Minimize01";export{t as Minimize01};

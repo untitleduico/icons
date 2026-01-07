@@ -14,12 +14,23 @@ To get started, install the Untitled UI Icons package:
 ```bash
 npm i @untitledui/icons
 ```
+
+You can also install directly from GitHub, e.g. with pnpm:
+
+```bash
+pnpm add @untitledui/icons@github:untitleduico/icons#main
+```
+
 Check out our [Untitled UI Icons installation guide](https://www.untitledui.com/react/docs/icons).
 
 
-## Using Untitled UI Icons
+## Usage Options
 
-Import Untitled UI Icons directly into your React project:
+Untitled UI Icons can be used in two ways:
+
+### Option 1: React Components
+
+Import icons as React components with full prop support:
 
 ```jsx
 import ArrowDown from "@untitledui/icons/ArrowDown"
@@ -38,6 +49,52 @@ import ArrowDown from "@untitledui/icons/ArrowDown"
 // Configure color via `className`
 <ArrowDown className="text-black" />
 ```
+
+### Option 2: Data URIs
+
+Import icons as base64-encoded data URIs for use in CSS or as image sources:
+
+```jsx
+import { ArrowDown } from "@untitledui/icons/__data_uri"
+
+// Use as an image source
+<img src={ArrowDown} alt="Arrow down" />
+
+// Use in CSS
+<div style={{ backgroundImage: `url(${ArrowDown})` }} />
+```
+
+#### Coloring Data URI Icons with CSS
+
+Data URI icons can be dynamically colored using CSS `mask-image` combined with `background-color`:
+
+```css
+.icon {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor; /* or any color */
+  mask-image: var(--icon-url);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+```
+
+```jsx
+import { ArrowDown } from "@untitledui/icons/__data_uri"
+
+<div 
+  className="icon" 
+  style={{ '--icon-url': `url(${ArrowDown})` }} 
+/>
+```
+
+This approach allows you to change the icon color simply by changing `background-color` or using `currentColor` to inherit from the parent's text color.
+
 
 ## What are Untitled UI Icons?
 

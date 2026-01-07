@@ -1,0 +1,1 @@
+import*as e from"react";const t=({size:r=24,color:o="currentColor",...n})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...n},e.createElement("path",{d:"M18 4v7a6 6 0 0 1-12 0V4M4 21h16"}));t.displayName="Underline01";export{t as Underline01};

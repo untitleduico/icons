@@ -1,0 +1,1 @@
+import*as e from"react";const t=({size:r=24,color:o="currentColor",...i})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...i},e.createElement("path",{d:"M7 22 17 2"}));t.displayName="SlashDivider";export{t as SlashDivider};

@@ -1,0 +1,1 @@
+import*as r from"react";const i=({size:o=24,color:t="currentColor",...e})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:t,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...e},r.createElement("path",{d:"M3 21h18M12 3v14m0 0 7-7m-7 7-7-7"}));i.displayName="AlignBottom01";export{i as AlignBottom01};
