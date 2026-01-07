@@ -1,0 +1,1 @@
+import*as o from"react";const i=({size:r=24,color:e="currentColor",...t})=>o.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},o.createElement("path",{d:"M12 20V4m0 0-6 6m6-6 6 6"}));i.displayName="ArrowNarrowUp";export{i as ArrowNarrowUp};

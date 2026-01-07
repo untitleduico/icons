@@ -1,0 +1,1 @@
+import*as r from"react";const t=({size:o=24,color:e="currentColor",...n})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...n},r.createElement("path",{d:"m7 13 5 5 5-5M7 6l5 5 5-5"}));t.displayName="ChevronDownDouble";export{t as ChevronDownDouble};

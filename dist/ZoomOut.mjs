@@ -1,0 +1,1 @@
+import*as r from"react";const i=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"m21 21-4.35-4.35M8 11h6m5 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0"}));i.displayName="ZoomOut";export{i as ZoomOut};

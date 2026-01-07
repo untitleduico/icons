@@ -1,0 +1,1 @@
+import*as e from"react";const i=({size:r=24,color:o="currentColor",...t})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},e.createElement("path",{d:"m21 21-3.5-3.5m2.5-6a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0"}));i.displayName="SearchLg";export{i as SearchLg};

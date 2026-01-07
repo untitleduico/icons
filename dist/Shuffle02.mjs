@@ -1,0 +1,1 @@
+import*as e from"react";const i=({size:r=24,color:o="currentColor",...t})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},e.createElement("path",{d:"M21 16v5m0 0h-5m5 0-6-6M3 3l6 6m7-6h5m0 0v5m0-5L3 21"}));i.displayName="Shuffle02";export{i as Shuffle02};

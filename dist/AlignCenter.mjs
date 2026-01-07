@@ -1,0 +1,1 @@
+import*as e from"react";const n=({size:r=24,color:o="currentColor",...t})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},e.createElement("path",{d:"M18 10H6m15-4H3m18 8H3m15 4H6"}));n.displayName="AlignCenter";export{n as AlignCenter};

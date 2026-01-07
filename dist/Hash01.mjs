@@ -1,0 +1,1 @@
+import*as o from"react";const s=({size:r=24,color:e="currentColor",...t})=>o.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},o.createElement("path",{d:"M4 8h16M4 16h16M8 3v18m8-18v18"}));s.displayName="Hash01";export{s as Hash01};

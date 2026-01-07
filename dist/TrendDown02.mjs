@@ -1,0 +1,1 @@
+import*as o from"react";const t=({size:r=24,color:e="currentColor",...n})=>o.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...n},o.createElement("path",{d:"m7 7 10 10m0 0V7m0 10H7"}));t.displayName="TrendDown02";export{t as TrendDown02};
