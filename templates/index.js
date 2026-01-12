@@ -4,7 +4,7 @@ const template = (files) => {
     return files
         .map((file) => {
             const name = path.basename(file, path.extname(file));
-            return `export { ${name} } from './${name}'`;
+            return `export { ${name}Icon } from './${name}'`;
         })
         .join("\n");
 };
