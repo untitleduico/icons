@@ -1,6 +1,6 @@
 {
     "name": "@untitledui/icons",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "description": "Official React library for Untitled UI Icons",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
@@ -44,6 +44,7 @@
     "devDependencies": {
         "@svgr/babel-plugin-remove-jsx-attribute": "^6.5.0",
         "@svgr/cli": "^6.5.1",
+        "@types/node": "^24.0.15",
         "@types/react": "^18.3.3",
         "prettier": "^2.8.4",
         "react": "^18.3.1",
