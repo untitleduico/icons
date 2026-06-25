@@ -1,1 +1,1 @@
-const r=o=>()=>import(`../${o}`).then(e=>({default:e[o]}));export{r as loadIcon};
+const r=o=>()=>import(`../${o}.mjs`).then(e=>({default:e[o]}));export{r as loadIcon};
