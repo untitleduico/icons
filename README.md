@@ -95,6 +95,19 @@ import { ArrowDown } from "@untitledui/icons/__data_uri"
 
 This approach allows you to change the icon color simply by changing `background-color` or using `currentColor` to inherit from the parent's text color.
 
+### Listing Available Icons
+
+A list of every icon name shipped with the package — plus an `IconName` type — is available under the `__inventory` subpath. It is generated at build time, sorted alphabetically, and typed as a `readonly` tuple, so the literal name strings flow through to `IconName`.
+
+```ts
+import { iconNames, type IconName } from "@untitledui/icons/__inventory";
+
+iconNames.length; // 1170+
+iconNames[0];     // "Activity"
+
+const name: IconName = "ArrowDown"; // type-checked against the full list
+```
+
 
 ## What are Untitled UI Icons?
 

@@ -1,39 +1,10 @@
 const fs = require("fs");
 const path = require("path");
+const { ICONS_DIR, toPascalCase, getSvgFiles } = require("./_shared");
 
-const ICONS_DIR = path.resolve(__dirname, "../icons");
 const OUTPUT_DIR = path.resolve(__dirname, "../src/__data_uri");
 const OUTPUT_FILE = path.join(OUTPUT_DIR, "index.ts");
 const SVGO_CONFIG = path.resolve(__dirname, "../svgo.data-uri.config.mjs");
-
-/**
- * Convert kebab-case filename to PascalCase export name
- * e.g., "activity-heart.svg" -> "ActivityHeart"
- */
-function toPascalCase(filename) {
-    const name = path.basename(filename, ".svg");
-    return name
-        .split("-")
-        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-        .join("");
-}
-
-/**
- * Recursively get all SVG files from a directory
- */
-function getSvgFiles(dir) {
-    let files = [];
-    const items = fs.readdirSync(dir, { withFileTypes: true });
-    for (const item of items) {
-        const fullPath = path.join(dir, item.name);
-        if (item.isDirectory()) {
-            files = files.concat(getSvgFiles(fullPath));
-        } else if (item.isFile() && item.name.endsWith(".svg")) {
-            files.push(fullPath);
-        }
-    }
-    return files;
-}
 
 async function generateDataUris() {
     // Dynamically import ESM modules

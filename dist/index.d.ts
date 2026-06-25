@@ -210,6 +210,8 @@ export { Camera03 } from './Camera03.js';
 export { CameraLens } from './CameraLens.js';
 export { CameraOff } from './CameraOff.js';
 export { CameraPlus } from './CameraPlus.js';
+export { Car01 } from './Car01.js';
+export { Car02 } from './Car02.js';
 export { Certificate01 } from './Certificate01.js';
 export { Certificate02 } from './Certificate02.js';
 export { ChartBreakoutCircle } from './ChartBreakoutCircle.js';

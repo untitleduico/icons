@@ -8,10 +8,11 @@
   "sideEffects": false,
   "scripts": {
     "optimize:svg": "svgo -f icons/ -r",
-    "build": "npm run build:data-uri && npm run build:icons && npm run build:tsc",
-    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify",
+    "build": "npm run build:data-uri && npm run build:inventory && npm run build:icons && npm run build:tsc",
+    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify && tsup --config tsup.inventory.config.ts --minify",
     "build:icons": "svgr -- icons",
     "build:data-uri": "node scripts/generate-data-uris.js",
+    "build:inventory": "node scripts/generate-inventory.js",
     "release": "standard-version --release-as patch && git push --follow-tags && npm publish",
     "prepare": "npx husky"
   },
@@ -35,6 +36,11 @@
       "types": "./dist/__data_uri/index.d.ts",
       "import": "./dist/__data_uri/index.mjs",
       "require": "./dist/__data_uri/index.js"
+    },
+    "./__inventory": {
+      "types": "./dist/__inventory/index.d.ts",
+      "import": "./dist/__inventory/index.mjs",
+      "require": "./dist/__inventory/index.js"
     }
   },
   "keywords": [
@@ -56,6 +62,7 @@
     "prettier": "^2.8.4",
     "react": "^18.3.1",
     "standard-version": "^9.5.0",
+    "svgo": "^3.3.3",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
   },
