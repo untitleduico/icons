@@ -2,7 +2,7 @@ import path from "path";
 
 export default {
     multipass: true,
-    datauri: "base64",
+    datauri: "enc",
     js2svg: {
         indent: 0,
         pretty: false,

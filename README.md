@@ -52,7 +52,7 @@ import ArrowDown from "@untitledui/icons/ArrowDown"
 
 ### Option 2: Data URIs
 
-Import icons as base64-encoded data URIs for use in CSS or as image sources:
+Import icons as URL-encoded SVG data URIs for use in CSS or as image sources:
 
 ```jsx
 import { ArrowDown } from "@untitledui/icons/__data_uri"
