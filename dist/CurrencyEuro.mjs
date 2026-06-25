@@ -1,0 +1,1 @@
+import*as o from"react";const n=({size:r=24,color:e="currentColor",...t})=>o.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},o.createElement("path",{d:"M19 5.519a8.5 8.5 0 1 0 0 12.962M3 14h10M3 10h10"}));n.displayName="CurrencyEuro";export{n as CurrencyEuro};

@@ -1,0 +1,1 @@
+import*as e from"react";const s=({size:r=24,color:o="currentColor",...t})=>e.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},e.createElement("path",{d:"M12 4v16m6-14L6 18m14-6H4m14 6L6 6"}));s.displayName="Asterisk02";export{s as Asterisk02};

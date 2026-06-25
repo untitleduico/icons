@@ -1,0 +1,1 @@
+import*as r from"react";const i=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"M5 9h14M5 15h14m0-10L5 19"}));i.displayName="EqualNot";export{i as EqualNot};

@@ -1,58 +1,77 @@
 {
-    "name": "@untitledui/icons",
-    "version": "0.0.22",
-    "description": "Official React library for Untitled UI Icons",
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "sideEffects": false,
-    "scripts": {
-        "optimize:svg": "svgo -f icons/ -r",
-        "build": "npm run build:icons && npm run build:tsc",
-        "build:tsc": "tsup --minify",
-        "build:icons": "svgr -- icons && node scripts/generate-rtl-icons.js",
-        "release": "standard-version --release-as patch && git push --follow-tags && npm publish"
+  "name": "@untitledui/icons",
+  "version": "0.0.22",
+  "description": "Official React library for Untitled UI Icons",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "optimize:svg": "svgo -f icons/ -r",
+    "build": "npm run build:data-uri && npm run build:inventory && npm run build:icons && npm run build:tsc",
+    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify && tsup --config tsup.inventory.config.ts --minify && tsup --config tsup.loaders.config.ts --minify",
+    "build:icons": "svgr -- icons",
+    "build:data-uri": "node scripts/generate-data-uris.js",
+    "build:inventory": "node scripts/generate-inventory.js",
+    "release": "standard-version --release-as patch && git push --follow-tags && npm publish",
+    "prepare": "npx husky"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
-    "files": [
-        "README.md",
-        "LICENSE",
-        "dist"
-    ],
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
-        },
-        "./*": {
-            "types": "./dist/*.d.ts",
-            "import": "./dist/*.mjs",
-            "require": "./dist/*.js"
-        }
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.js"
     },
-    "keywords": [
-        "untitledui",
-        "icons",
-        "svg",
-        "react"
-    ],
-    "author": "Dilshod Turobov",
-    "license": "MIT",
-    "publishConfig": {
-        "access": "public"
+    "./__data_uri": {
+      "types": "./dist/__data_uri/index.d.ts",
+      "import": "./dist/__data_uri/index.mjs",
+      "require": "./dist/__data_uri/index.js"
     },
-    "devDependencies": {
-        "@svgr/babel-plugin-remove-jsx-attribute": "^6.5.0",
-        "@svgr/cli": "^6.5.1",
-        "@types/node": "^24.0.15",
-        "@types/react": "^18.3.3",
-        "prettier": "^2.8.4",
-        "react": "^18.3.1",
-        "standard-version": "^9.5.0",
-        "tsup": "^8.2.4",
-        "typescript": "^5.5.4"
+    "./__inventory": {
+      "types": "./dist/__inventory/index.d.ts",
+      "import": "./dist/__inventory/index.mjs",
+      "require": "./dist/__inventory/index.js"
     },
-    "peerDependencies": {
-        "react": ">= 16"
+    "./__loaders": {
+      "types": "./dist/__loaders/index.d.ts",
+      "import": "./dist/__loaders/index.mjs",
+      "require": "./dist/__loaders/index.js"
     }
+  },
+  "keywords": [
+    "untitledui",
+    "icons",
+    "svg",
+    "react"
+  ],
+  "author": "Dilshod Turobov",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@svgr/babel-plugin-remove-jsx-attribute": "^6.5.0",
+    "@svgr/cli": "^6.5.1",
+    "@types/node": "^24.0.15",
+    "@types/react": "^18.3.3",
+    "prettier": "^2.8.4",
+    "react": "^18.3.1",
+    "standard-version": "^9.5.0",
+    "svgo": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "react": ">= 16"
+  }
 }

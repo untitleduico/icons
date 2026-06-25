@@ -2,6 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
     entry: ["src/icons"],
+    outDir: "dist",
     splitting: true,
     sourcemap: false,
     clean: true,
@@ -9,16 +10,4 @@ export default defineConfig({
     format: ["esm", "cjs"],
     dts: true,
     legacyOutput: false,
-    onSuccess: async () => {
-        const fs = await import("fs");
-        const path = await import("path");
-
-        const indexMjsPath = path.join("dist", "index.mjs");
-
-        if (fs.existsSync(indexMjsPath)) {
-            let content = fs.readFileSync(indexMjsPath, "utf-8");
-            content = content.replace(/from"\.\/([^"]+)"/g, 'from"./$1.mjs"');
-            fs.writeFileSync(indexMjsPath, content);
-        }
-    },
 });

@@ -1,0 +1,1 @@
+import*as o from"react";const s=({size:r=24,color:e="currentColor",...t})=>o.createElement("svg",{viewBox:"0 0 24 24",width:r,height:r,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},o.createElement("path",{d:"M12 5v14m-7-7h14"}));s.displayName="Plus";export{s as Plus};

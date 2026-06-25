@@ -1,0 +1,1 @@
+import*as r from"react";const s=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"M12 9V6m0 16a7 7 0 0 1-7-7V9a7 7 0 0 1 14 0v6a7 7 0 0 1-7 7"}));s.displayName="Mouse";export{s as Mouse};

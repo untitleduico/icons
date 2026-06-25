@@ -1,0 +1,1 @@
+import*as r from"react";const s=({size:o=24,color:e="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:o,height:o,stroke:e,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"M18 6 6 18M6 6l12 12"}));s.displayName="XClose";export{s as XClose};

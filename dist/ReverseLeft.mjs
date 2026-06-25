@@ -1,0 +1,1 @@
+import*as r from"react";const s=({size:e=24,color:o="currentColor",...t})=>r.createElement("svg",{viewBox:"0 0 24 24",width:e,height:e,stroke:o,strokeWidth:"2",fill:"none",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",...t},r.createElement("path",{d:"M4 7h10a6 6 0 0 1 0 12H4M4 7l4-4M4 7l4 4"}));s.displayName="ReverseLeft";export{s as ReverseLeft};
