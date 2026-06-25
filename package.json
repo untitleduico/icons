@@ -9,7 +9,7 @@
   "scripts": {
     "optimize:svg": "svgo -f icons/ -r",
     "build": "npm run build:data-uri && npm run build:inventory && npm run build:icons && npm run build:tsc",
-    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify && tsup --config tsup.inventory.config.ts --minify",
+    "build:tsc": "tsup --minify && tsup --config tsup.data-uri.config.ts --minify && tsup --config tsup.inventory.config.ts --minify && tsup --config tsup.loaders.config.ts --minify",
     "build:icons": "svgr -- icons",
     "build:data-uri": "node scripts/generate-data-uris.js",
     "build:inventory": "node scripts/generate-inventory.js",
@@ -41,6 +41,11 @@
       "types": "./dist/__inventory/index.d.ts",
       "import": "./dist/__inventory/index.mjs",
       "require": "./dist/__inventory/index.js"
+    },
+    "./__loaders": {
+      "types": "./dist/__loaders/index.d.ts",
+      "import": "./dist/__loaders/index.mjs",
+      "require": "./dist/__loaders/index.js"
     }
   },
   "keywords": [

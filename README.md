@@ -108,6 +108,47 @@ iconNames[0];     // "Activity"
 const name: IconName = "ArrowDown"; // type-checked against the full list
 ```
 
+### Lazy-loading Icons by Name
+
+If you need to render an icon by a runtime string (e.g. a name from a CMS or user input) without bundling every icon into your app, use the `__loaders` subpath together with `React.lazy`:
+
+```tsx
+import { lazy, Suspense } from "react";
+import { loadIcon } from "@untitledui/icons/__loaders";
+import type { IconName } from "@untitledui/icons/__inventory";
+
+function Icon({ name }: { name: IconName }) {
+  const Component = lazy(loadIcon(name));
+  return (
+    <Suspense fallback={null}>
+      <Component />
+    </Suspense>
+  );
+}
+```
+
+Behind the scenes `loadIcon` issues a template-literal dynamic import (`import(\`../${name}\`)`) from inside the package's `dist/__loaders` directory. Bundlers (Webpack 5, Turbopack, Rollup/Vite) treat the parent `dist/` directory as the context root and emit **one chunk per icon actually requested at runtime** — so your initial bundle stays small no matter how many icons you reference.
+
+For repeated lookups, memoise the returned component:
+
+```tsx
+import { lazy } from "react";
+import { loadIcon, type IconLoader } from "@untitledui/icons/__loaders";
+import type { IconName } from "@untitledui/icons/__inventory";
+
+const cache = new Map<IconName, ReturnType<typeof lazy>>();
+
+export function resolveIcon(name: IconName) {
+  const cached = cache.get(name);
+  if (cached) return cached;
+  const Component = lazy(loadIcon(name));
+  cache.set(name, Component);
+  return Component;
+}
+```
+
+> **Note:** `loadIcon` relies on the consumer's bundler analysing the dynamic import inside `node_modules/@untitledui/icons/dist/__loaders/index.mjs` and producing per-icon chunks. Webpack-based stacks (Next.js, CRA) and Vite/Rollup production builds handle this; check your production build output if you depend on the per-icon split. A direct dynamic import like `import(\`@untitledui/icons/${name}\`)` written in your own code will **not** work — bundlers cannot create a context from a bare package specifier.
+
 
 ## What are Untitled UI Icons?
 
