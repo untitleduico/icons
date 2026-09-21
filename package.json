@@ -10,7 +10,7 @@
         "optimize:svg": "svgo -f icons/ -r",
         "build": "npm run build:icons && npm run build:tsc",
         "build:tsc": "tsup --minify",
-        "build:icons": "svgr -- icons && node scripts/generate-rtl-icons.js",
+        "build:icons": "svgr -- icons && node scripts/generate-rtl-icons.js && node scripts/generate-deprecated-aliases.js",
         "release": "standard-version --release-as patch && git push --follow-tags && npm publish"
     },
     "files": [
