@@ -1,6 +1,6 @@
 {
     "name": "@untitledui/icons",
-    "version": "0.0.22",
+    "version": "0.0.23",
     "description": "Official React library for Untitled UI Icons",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
