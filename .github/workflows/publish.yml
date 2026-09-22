@@ -1,0 +1,59 @@
+name: Publish
+
+on:
+    workflow_dispatch:
+        inputs:
+            dry_run:
+                description: Build and verify, but stop short of publishing
+                type: boolean
+                default: false
+
+permissions:
+    contents: read
+    # Lets the job mint the OIDC token npm exchanges for publish rights. Without
+    # it there is no credential at all, since nothing here holds an npm token.
+    id-token: write
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v7
+
+            # No npm cache on purpose: this job can mint a publish credential, so
+            # it should not restore anything a less privileged workflow wrote.
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+                  registry-url: https://registry.npmjs.org
+
+            # Trusted publishing needs npm 11.5.1+, which is newer than the npm
+            # bundled with some Node releases.
+            - name: Use an npm that understands trusted publishing
+              run: |
+                  npm install -g npm@latest
+                  npm --version
+
+            - run: npm ci
+
+            # dist/ and src/icons/ are gitignored, so the published output is
+            # built here from the SVG sources rather than shipped from a checkout.
+            - run: npm run build
+
+            - name: Verify the build
+              run: node scripts/verify-build.js
+
+            # No NODE_AUTH_TOKEN: if one is present npm takes the legacy token
+            # path and never attempts OIDC.
+            - name: Publish to npm
+              run: npm publish --provenance ${{ inputs.dry_run && '--dry-run' || '' }}
+
+            - name: Summary
+              run: |
+                  VERSION=$(node -p "require('./package.json').version")
+                  if [ "${{ inputs.dry_run }}" = "true" ]; then
+                      echo "Dry run only — nothing was published, and OIDC was not exercised. Version would be $VERSION." >> $GITHUB_STEP_SUMMARY
+                  else
+                      echo "Published @untitledui/icons@$VERSION with provenance." >> $GITHUB_STEP_SUMMARY
+                  fi

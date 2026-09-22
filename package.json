@@ -30,6 +30,10 @@
             "require": "./dist/*.js"
         }
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/untitleduico/icons.git"
+    },
     "keywords": [
         "untitledui",
         "icons",
